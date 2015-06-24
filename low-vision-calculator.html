@@ -3,6 +3,8 @@
 <head>
   <title>Low Vision Calculator</title>
   <link rel="stylesheet" type="text/css" href="low-vision-calculator.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="low-vision-calculator.js"></script>
 </head>
 
 <body>
@@ -23,7 +25,7 @@
         <th colspan="6">Calculator</th>
       </tr>
       <tr>
-        <td rowspan="2">&nbsp;</td>
+        <td rowspan="2"></td>
         <td colspan="2">
           <strong>Measured</strong>
         </td>
@@ -40,59 +42,59 @@
       <tr>
         <td rowspan="2">Distance</td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box11" type="text" name="box11" placeholder="11">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box12" type="text" name="box12" placeholder="12">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box13" type="text" name="box13" placeholder="13">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box14" type="text" name="box14" placeholder="14">
         </td>
       </tr>
       <tr>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box21" type="text" name="box21" placeholder="21">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box21" type="text" name="box22" placeholder="22">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box21" type="text" name="box23" placeholder="23">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box21" type="text" name="box24" placeholder="24">
         </td>
       </tr>
       <tr>
         <td rowspan="2">Near</td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box31" type="text" name="box31" placeholder="31">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box32" type="text" name="box32" placeholder="32">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box33" type="text" name="box33" placeholder="33">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box34" type="text" name="box34" placeholder="34">
         </td>
       </tr>
       <tr>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box41" type="text" name="box41" placeholder="41">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box42" type="text" name="box42" placeholder="42">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box43" type="text" name="box43" placeholder="43">
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input id="box44" type="text" name="box44" placeholder="44">
         </td>
       </tr>
     </table>
@@ -105,7 +107,7 @@
           <div title="Magnification"><strong>Magnification</strong></div>
         </td>
         <th>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input type="text" name="magnification" placeholder="mag">
         </th>
       </tr>
       <tr>
@@ -113,7 +115,7 @@
           <div title="EVD"><strong>EVD</strong></div>
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input type="text" name="evd" placeholder="evd">
         </td>
       </tr>
       <tr>
@@ -121,12 +123,16 @@
           <div title="EVP"><strong>EVP</strong></div>
         </td>
         <td>
-          <input type="text" name="NAME_ME" placeholder="hint">
+          <input type="text" name="evp" placeholder="evp">
         </td>
       </tr>
     </table>
 
-    <button id=myButton type="button" title="Submit">Submit</button>
+    <button id=myButton type="button" title="Submit" onclick="computeVision()">Submit</button>
+
+    <div title="Vision Calculation">Vision Calculation: (currently adding box 11 and box 12)</div>
+    <div id="vision"></div>
+
   </div>
 
 </body>
