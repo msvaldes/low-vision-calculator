@@ -21,3 +21,7 @@ function computeVision() {
 
   $("#vision").text(box11 + box12);
 }
+
+function considerDisabling() {
+  $("#box31").prop("disabled", true)
+}
