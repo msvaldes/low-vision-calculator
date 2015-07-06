@@ -1,4 +1,5 @@
-function computeVision() {
+function computeVision(boxChanged) {
+  console.log(boxChanged);
   var box11 = parseInt( $("#box11").val() );
   var box12 = parseInt( $("#box12").val() );
   var box13 = parseInt( $("#box13").val() );
@@ -9,7 +10,7 @@ function computeVision() {
   var box23 = parseInt( $("#box23").val() );
   var box24 = parseInt( $("#box24").val() );
 
-  var box31 = parseInt( $("#box31").val() ) ;
+  var box31 = parseInt( $("#box31").val() );
   var box32 = parseInt( $("#box32").val() );
   var box33 = parseInt( $("#box33").val() );
   var box34 = parseInt( $("#box34").val() );
@@ -22,6 +23,7 @@ function computeVision() {
   $("#vision").text(box11 + box12);
 }
 
-function considerDisabling() {
+function considerDisabling(boxChanged) {
+  console.log(boxChanged);
   $("#box31").prop("disabled", true)
 }
