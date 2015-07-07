@@ -40,7 +40,7 @@ input{
     color: white;
 }
 
-#magnification {
+.magnification {
     height: 150px;
     background-color: #69D2E7;
     clear: both;

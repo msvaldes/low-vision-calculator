@@ -1,5 +1,4 @@
 function computeVision(boxChanged) {
-  console.log(boxChanged);
   var box11 = parseInt( $("#box11").val() );
   var box12 = parseInt( $("#box12").val() );
   var box13 = parseInt( $("#box13").val() );
@@ -20,10 +19,25 @@ function computeVision(boxChanged) {
   var box43 = parseInt( $("#box43").val() );
   var box44 = parseInt( $("#box44").val() );
 
-  $("#vision").text(box11 + box12);
+  console.log("Print whatever you want...");
+  console.log(box11 + " / " + box21 + " = " + box11 / box21);
+
+  var magnification = (box13 / box23) / (box11 / box21);
+  $("#magnification").val(magnification)
+
+  // This will update the arbitrary div at the bottom of everything
+  // $("#vision").text(magnification);
 }
 
-function considerDisabling(boxChanged) {
-  console.log(boxChanged);
-  $("#box31").prop("disabled", true)
+function considerDisabling(idThatChanged) {
+  console.log("The ID that changed:", idThatChanged);
+  // 1. disable the submit button (you would not be able to click it initially)
+  // 2. this function is called whenever a box is changed...
+  //    consider checking to see if necessary inputs are present for
+  //    the submit button to be able to do something
+  // 3. enable the submit button (allow to be clicked if all the inputs are present)
+  // 4. disable the submit button if any of the inputs are deleted
+   
+  //$("#box31").prop("disabled", true);
+  //$("#" + idThatChanged).prop("disabled", true);
 }
