@@ -18,12 +18,33 @@ function computeVision(boxChanged) {
   var box42 = parseInt( $("#box42").val() );
   var box43 = parseInt( $("#box43").val() );
   var box44 = parseInt( $("#box44").val() );
+  var DMOD = box11/box21;
+  var DMOS = box12/box22;
+  var DTOD = box13/box23;
+  var DTOS = box14/box24;
+  var NMOD = box31/box41;
+  var NMOS = box32/box42;
+  var NTOD = box33/box43;
+  var NTOS = box34/box44;
+  
+  
+  
+  
 
-  console.log("Print whatever you want...");
+  
   console.log(box11 + " / " + box21 + " = " + box11 / box21);
+  console.log(DMOD);
+  console.log(DMOS);
+  
 
-  var magnification = (box13 / box23) / (box11 / box21);
-  $("#magnification").val(magnification)
+  var magnification =  (Math.max(DTOD, DTOS)) / Math.max(DMOD, DMOS);
+  $("#magnification").val(magnification);
+  $("#box31").val(box11 / 100);
+  $("#box32").val(box12 / 100);
+  $("#box41").val(box21 / 100);
+  $("#box42").val(box22 / 100);
+  
+  
 
   // This will update the arbitrary div at the bottom of everything
   // $("#vision").text(magnification);
