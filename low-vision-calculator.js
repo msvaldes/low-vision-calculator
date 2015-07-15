@@ -33,7 +33,7 @@ function computeVision(boxChanged) {
 
   var magnification =  (Math.max(DTOD, DTOS)) / Math.max(DMOD, DMOS);
   $("#magnification").val(magnification);
-  $("#evd").val(computeEVD(magnification))
+  $("#evd").val(computeEVD(magnification));
 
   $("#box31").val(box11 / 100);
   $("#box32").val(box12 / 100);
@@ -45,7 +45,7 @@ function computeVision(boxChanged) {
 }
 
 function computeEVD(magnification) {
-  return $("#box31").val() / magnification
+  return $("#box31").val() / magnification;
 }
 
 function considerDisabling(idThatChanged) {
@@ -62,5 +62,5 @@ function considerDisabling(idThatChanged) {
 }
 
 function calculateEVD(magnification) {
-  $("#evd").val(computeEVD(magnification))
+  $("#evd").val(computeEVD(magnification));
 }
