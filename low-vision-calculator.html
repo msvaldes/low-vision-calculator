@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 
 <head>
   <title>Low Vision Calculator</title>
@@ -103,12 +102,20 @@
 
   <div class="magnification">
     <table class="tableizer-table1">
+      <tr>
+        <td></td>
+        <td><strong>Distance</strong></td>
+        <td><strong>Near</strong></td>
+      </tr>
       <tr class="tableizer-firstrow1">
         <td style="text-align: right">
           <div title="Magnification"><strong>Magnification</strong></div>
         </td>
         <th>
           <input id="magnification" type="text" name="magnification" placeholder="mag" onChange="calculateEVD(this.value)">
+        </th>
+        <th>
+          <input id="magnificationNear" type="text" name="magnificationNear" placeholder="mag" onChange="calculateEVD(this.value)">
         </th>
       </tr>
       <tr>
@@ -118,13 +125,19 @@
         <td>
           <input id="evd" type="text" name="evd" placeholder="evd">
         </td>
+        <td>
+          <input id="evdNear" type="text" name="evdNear" placeholder="evd">
+        </td>
       </tr>
       <tr>
         <td style="text-align: right">
           <div title="EVP"><strong>EVP</strong></div>
         </td>
         <td>
-          <input type="text" name="evp" placeholder="evp">
+          <input id= "evp" type="text" name="evp" placeholder="evp">
+        </td>
+        <td>
+          <input id = "evpNear" type="text" name="evpNear" placeholder="evp">
         </td>
       </tr>
     </table>
