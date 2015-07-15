@@ -33,7 +33,7 @@ function computeVision(boxChanged) {
 
   var magnification =  (Math.max(DTOD, DTOS)) / Math.max(DMOD, DMOS);
   $("#magnification").val(magnification);
-  $("#evd").val(computeEVD(magnification));
+  $("#evd").val($("#box31").val() / magnification);
 
   $("#box31").val(box11 / 100);
   $("#box32").val(box12 / 100);
@@ -44,11 +44,16 @@ function computeVision(boxChanged) {
   // $("#vision").text(magnification);
 }
 
-function computeEVD(magnification) {
-  return $("#box31").val() / magnification;
-}
 
-function considerDisabling(idThatChanged) {
+
+function calculateEVD(magnification) {
+  $("#evd").val(Math.max($("#box31").val(), $("#box32").val()) / magnification);
+  
+  
+  
+  
+  
+  function considerDisabling(idThatChanged) {
   console.log("The ID that changed:", idThatChanged);
   // 1. disable the submit button (you would not be able to click it initially)
   // 2. this function is called whenever a box is changed...
@@ -60,7 +65,4 @@ function considerDisabling(idThatChanged) {
   //$("#box31").prop("disabled", true);
   //$("#" + idThatChanged).prop("disabled", true);
 }
-
-function calculateEVD(magnification) {
-  $("#evd").val(computeEVD(magnification));
 }
