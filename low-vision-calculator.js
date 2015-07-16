@@ -30,19 +30,44 @@ function computeVision(boxChanged) {
   console.log(box11 + " / " + box21 + " = " + box11 / box21);
   console.log(DMOD);
   console.log(DMOS);
-
+ 
+//distance magnifcation
   var magnification =  (Math.max(DTOD, DTOS)) / Math.max(DMOD, DMOS);
   $("#magnification").val(magnification);
-  $("#evd").val($("#box31").val() / magnification);
+  
+  
+  
+  
+  
 
+  //Near fields population based on distance inputs
   $("#box31").val(box11 / 100);
   $("#box32").val(box12 / 100);
   $("#box41").val(box21 / 100);
   $("#box42").val(box22 / 100);
+  
+ 
+  //Near field target OD and OS
+  $("#box33").val($("#box31").val()*$("#box43").val()/$("#box41").val());
+  $("#box34").val($("#box32").val()*$("#box44").val()/$("#box42").val());
+
+  
+  //Near Magnification
+  var magnificationNear =  (Math.min($("#box41").val()/$("#box43").val(),$("#box42").val()/$("#box44").val() )) ;
+  $("#magnificationNear").val(magnificationNear);
+  
+  //EVD calcuation
+  $("#evd").val($("#box31").val()/magnification);
+  $("#evdNear").val(Math.max($("#box33").val(),$("#box34").val()));
+  
+  
+  //EVP calcuation
+  $("#evpNear").val(1/$("#evdNear").val());
 
   // This will update the arbitrary div at the bottom of everything
   // $("#vision").text(magnification);
-}
+  
+  }
 
 
 
@@ -50,8 +75,8 @@ function calculateEVD(magnification) {
   $("#evd").val(Math.max($("#box31").val(), $("#box32").val()) / magnification);
   
   
-  
-  
+   
+    
   
   function considerDisabling(idThatChanged) {
   console.log("The ID that changed:", idThatChanged);
