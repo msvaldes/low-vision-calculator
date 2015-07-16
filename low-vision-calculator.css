@@ -72,6 +72,18 @@ table.tableizer-table1 {
     position: relative;
     left: 100px;
     top: 10px;
+  float: left;
+}
+
+table.tableizer-table2 {
+    border: 0px
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+  padding: 10px;
+    position: relative;
+    left: 100px;
+    top: 10px;
+  
 }
 .tableizer-table1 td {
     padding: 5px;
@@ -80,6 +92,18 @@ table.tableizer-table1 {
   text-align: center;
 }
 .tableizer-table1 th {
+    background-color: none;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.tableizer-table2 td {
+    padding: 5px;
+    margin: 3px;
+    border: 0px solid #ccc;
+  text-align: center;
+}
+.tableizer-table2 th {
     background-color: none;
     color: #FFF;
     font-weight: bold;
@@ -111,7 +135,7 @@ table.tableizer-table1 {
 	text-shadow:0px -1px 0px #2b665e;
   position: relative;
   top: -80px;
-  left: 600px;
+  left: 700px;
 }
 #myButton:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
@@ -122,3 +146,4 @@ table.tableizer-table1 {
 	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
 	background-color:#6c7c7c;
+}
