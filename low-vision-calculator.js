@@ -41,10 +41,22 @@ function computeVision(boxChanged) {
   
 
   //Near fields population based on distance inputs
-  $("#box31").val(box11 / 100);
-  $("#box32").val(box12 / 100);
-  $("#box41").val(box21 / 100);
-  $("#box42").val(box22 / 100);
+  if($("#box31").val()===''){
+  $("#box31").val($("#box11").val() / $("#box11").val()*0.4);}
+  else{$("#box31").val($("#box31").val());}
+    
+  if($("#box32").val()===''){
+  $("#box32").val($("#box12").val() / $("#box12").val()*0.4);}
+  else{$("#box32").val($("#box32").val());}
+      
+  if($("#box41").val()===''){
+  $("#box41").val($("#box21").val()/100 * 0.4/$("#box11").val()*100);}
+  else{$("#box41").val($("#box41").val());}
+  
+  if($("#box42").val()===''){
+  $("#box42").val($("#box22").val()/100 * 0.4/$("#box12").val()*100);}
+  else{$("#box42").val($("#box42").val());}
+  
   
  
   //Near field target OD and OS
@@ -67,6 +79,25 @@ function computeVision(boxChanged) {
   // This will update the arbitrary div at the bottom of everything
   // $("#vision").text(magnification);
   
+  
+  // Effective ADD power
+  $("#powerAdd").val($("#evpNear").val());
+  
+  
+  // Effective ADD working distance
+  $("#wdAdd").val(1/$("#powerAdd").val());
+  
+  //IHHM calculations
+  $("#powerIHHM").val($("#evpNear").val());
+  
+  // Effective ADD working distance
+  $("#wdIHHM").val(1/$("#powerAdd").val());
+  
+  //ISM Power Calculation
+var powerTop =  ($("#evpNear").val()- $("#addISM").val());
+var powerBottom = (1- ($("#addISM").val()*$("#wdISM").val()));
+var powerISMcalc = powerTop/powerBottom;
+$("#powerISM").val(Math.ceil(powerISMcalc));
   }
 
 
@@ -91,3 +122,4 @@ function calculateEVD(magnification) {
   //$("#" + idThatChanged).prop("disabled", true);
 }
 }
+
