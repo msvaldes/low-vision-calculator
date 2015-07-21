@@ -8,13 +8,18 @@
 </head>
 
 <body>
+  <form id = "myForm">
   <div id="top-banner" title="Low Vision Calculator">Low Vision Calculator</div>
 
   <div id="instructions">
     <h3 id="intro">Instructions:</h3>
     <ol>
-      <li>Provide measured distance or near acuity (Snellen or M-notation)</li>
+      <li>Provide measured distance acuity (<strong>Snellen or Metric Notation</strong>)<ul>* Include near acuity if measured (<strong>M-Notation only</strong>)</ul></li>
+      <p> </p>
+      <p> </p>
       <li>Provide <strong>target</strong> print size</li>
+      <p> </p>
+      <p> </p>
       <li>Submit!</li>
     </ol>
   </div>
@@ -194,10 +199,12 @@
     </table>
 
     <button id=myButton type="button" title="Submit" onclick="computeVision()">Submit</button>
+    
+    <button id=reset type="reset" title="reset" onclick ="resetForm()" value="Reset">Reset</button>
 
     
   </div>
-
+</form>
 </body>
 
 </html>
