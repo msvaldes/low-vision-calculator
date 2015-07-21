@@ -43,19 +43,19 @@ function computeVision(boxChanged) {
   //Near fields population based on distance inputs
   if($("#box31").val()===''){
   $("#box31").val($("#box11").val() / $("#box11").val()*0.4);}
-  else{$("#box31").val($("#box31").val());}
+  else{$("#box31").val();}
     
   if($("#box32").val()===''){
   $("#box32").val($("#box12").val() / $("#box12").val()*0.4);}
-  else{$("#box32").val($("#box32").val());}
+  else{$("#box32").val();}
       
   if($("#box41").val()===''){
   $("#box41").val($("#box21").val()/100 * 0.4/$("#box11").val()*100);}
-  else{$("#box41").val($("#box41").val());}
+  else{$("#box41").val();}
   
   if($("#box42").val()===''){
   $("#box42").val($("#box22").val()/100 * 0.4/$("#box12").val()*100);}
-  else{$("#box42").val($("#box42").val());}
+  else{$("#box42").val();}
   
   
  
@@ -74,7 +74,7 @@ function computeVision(boxChanged) {
   
   
   //EVP calcuation
-  $("#evpNear").val(1/$("#evdNear").val());
+  $("#evpNear").val((1/$("#evdNear").val()));
 
   // This will update the arbitrary div at the bottom of everything
   // $("#vision").text(magnification);
@@ -123,3 +123,7 @@ function calculateEVD(magnification) {
 }
 }
 
+function resetForm(){
+  document.getElementbyId("myForm").reset();
+  
+}
