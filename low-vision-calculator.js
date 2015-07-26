@@ -91,7 +91,7 @@ function computeVision(boxChanged) {
   $("#wdIHHM").val(1/$("#powerAdd").val());
 
   //ISM Power Calculation
-  var powerTop =  ($("#evpNear").val()- $("#addISM").val());
+  var powerTop = ($("#evpNear").val()- $("#addISM").val());
   var powerBottom = (1- ($("#addISM").val()*$("#wdISM").val()));
   var powerISMcalc = powerTop/powerBottom;
   $("#powerISM").val(Math.ceil(powerISMcalc));
@@ -116,4 +116,9 @@ function considerDisabling(idThatChanged) {
 
 function resetForm(){
   document.getElementbyId("myForm").reset();
+}
+
+function calculateBox31() {
+	var idThatChanged = $('#box11').val();
+	$('#box31').val(idThatChanged / idThatChanged * 0.4);
 }
